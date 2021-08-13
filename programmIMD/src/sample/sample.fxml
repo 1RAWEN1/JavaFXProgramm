@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+  <tabs>
+    <Tab text="Изделия">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="table" layoutX="38.0" layoutY="14.0" prefHeight="140.0" prefWidth="525.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Название" />
+                      <TableColumn fx:id="hColumn" prefWidth="75.0" text="Высота" />
+                      <TableColumn fx:id="wColumn" prefWidth="75.0" text="Ширина" />
+                      <TableColumn fx:id="sColumn" prefWidth="75.0" text="Длина" />
+                      <TableColumn fx:id="tColumn" prefWidth="149.0" text="Время на изготовление" />
+                      <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="75.0" text="Цена" />
+                    </columns>
+                  </TableView>
+                  <TabPane layoutY="154.0" prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Добавить">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="105.0" prefWidth="570.0">
+                                       <children>
+                                          <VBox prefHeight="105.0" prefWidth="220.0">
+                                             <children>
+                                                <TextField fx:id="nameField" prefHeight="25.0" prefWidth="300.0" promptText="Название">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin></TextField>
+                                                <TextField fx:id="hField" promptText="Высота">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="wField" promptText="Ширина">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                           <VBox prefHeight="105.0" prefWidth="220.0">
+                                               <children>
+                                                   <TextField fx:id="sField" prefHeight="25.0" prefWidth="150.0" promptText="Длина">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin></TextField>
+                                                   <TextField fx:id="timeField" prefHeight="25.0" prefWidth="173.0" promptText="Время на изготовление">
+                                                       <opaqueInsets>
+                                                           <Insets />
+                                                       </opaqueInsets>
+                                                       <VBox.margin>
+                                                           <Insets top="10.0" />
+                                                       </VBox.margin>
+                                                   </TextField>
+                                                   <TextField fx:id="priceField" promptText="Цена">
+                                                       <opaqueInsets>
+                                                           <Insets />
+                                                       </opaqueInsets>
+                                                       <VBox.margin>
+                                                           <Insets top="10.0" />
+                                                       </VBox.margin>
+                                                   </TextField>
+                                               </children>
+                                             <HBox.margin>
+                                                <Insets left="100.0" />
+                                             </HBox.margin>
+                                           </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="vLab" alignment="CENTER" contentDisplay="CENTER" layoutX="218.0" layoutY="111.0" prefHeight="17.0" prefWidth="164.0" textFill="RED" />
+                                    <Button alignment="BOTTOM_CENTER" layoutX="254.0" layoutY="128.0" mnemonicParsing="false" onAction="#addInTable" text="Добавить" textAlignment="CENTER" textFill="RED">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Удалить">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="delName" layoutX="201.0" layoutY="49.0" prefHeight="25.0" prefWidth="200.0" promptText="Название изделия" />
+                                    <Button layoutX="260.0" layoutY="120.0" mnemonicParsing="false" onAction="#delete" text="Удалить" textFill="RED">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font></Button>
+                                    <Label fx:id="delLab" alignment="CENTER" layoutX="212.0" layoutY="86.0" prefHeight="17.0" prefWidth="177.0" textFill="RED" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Материалы">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="600.0">
+                  <children>
+                      <TableView fx:id="table1" layoutX="38.0" layoutY="14.0" prefHeight="140.0" prefWidth="525.0">
+                          <columns>
+                              <TableColumn fx:id="matColumn" prefWidth="108.0" text="Вид материала" />
+                              <TableColumn fx:id="sColumn1" prefWidth="118.0" text="Сорт дерева" />
+                              <TableColumn fx:id="shopColumn" prefWidth="169.0" text="Название магазина" />
+                              <TableColumn fx:id="priceColumn1" prefWidth="129.0" text="Цена" />
+                          </columns>
+                      </TableView>
+                      <TabPane layoutY="154.0" prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                              <Tab text="Добавить">
+                                  <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="600.0">
+                                 <children>
+                                    <ListView fx:id="wood" layoutX="39.0" prefHeight="110.0" prefWidth="110.0" />
+                                    <ListView fx:id="sort" layoutX="149.0" onMouseClicked="#addItem2" prefHeight="110.0" prefWidth="119.0" />
+                                    <ListView fx:id="mname" layoutX="268.0" onMouseClicked="#addItem3" prefHeight="110.0" prefWidth="171.0" />
+                                    <ListView fx:id="price" layoutX="439.0" prefHeight="110.0" prefWidth="125.0" />
+                                    <Button layoutX="207.0" layoutY="128.0" mnemonicParsing="false" onAction="#addItem" prefHeight="38.0" prefWidth="93.0" text="Добавить" textFill="RED">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="mLab" alignment="CENTER" layoutX="197.0" layoutY="110.0" prefHeight="17.0" prefWidth="206.0" textFill="RED" />
+                                    <Button layoutX="300.0" layoutY="128.0" mnemonicParsing="false" onAction="#removeItem" text="Удалить" textFill="#fc0000">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children></AnchorPane>
+                                  </content>
+                              </Tab>
+                              <Tab text="Добавить сорт дерева">
+                                  <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                          <children>
+                                              <TextField fx:id="woodField" layoutX="201.0" layoutY="49.0" prefHeight="25.0" prefWidth="200.0" promptText="Название сорта" />
+                                              <Button layoutX="208.0" layoutY="120.0" mnemonicParsing="false" onAction="#addSort" text="Добавить" textFill="#0a0a0a">
+                                                  <font>
+                                                      <Font size="16.0" />
+                                                  </font></Button>
+                                    <Button layoutX="300.0" layoutY="120.0" mnemonicParsing="false" onAction="#deleteSort" text="Удалить" textFill="RED">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="sortLab" alignment="CENTER" layoutX="177.0" layoutY="91.0" prefHeight="18.0" prefWidth="246.0" textFill="RED" />
+                                          </children></AnchorPane>
+                                  </content>
+                              </Tab>
+                              <Tab text="Добавить магазин">
+                                  <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                          <children>
+                                              <TextField fx:id="mName" layoutX="100.0" layoutY="86.0" prefHeight="25.0" prefWidth="200.0" promptText="Название магазина" />
+                                              <TextField fx:id="priceField1" layoutX="300.0" layoutY="86.0" prefHeight="25.0" prefWidth="200.0" promptText="Цена" />
+                                              <Button layoutX="207.0" layoutY="132.0" mnemonicParsing="false" onAction="#addM" text="Добавить" textFill="#0a0a0a">
+                                                  <font>
+                                                      <Font size="16.0" />
+                                                  </font></Button>
+                                    <ListView fx:id="material" layoutX="100.0" prefHeight="86.0" prefWidth="200.0" />
+                                    <ListView fx:id="sort1" layoutX="300.0" prefHeight="86.0" prefWidth="200.0" />
+                                    <Button layoutX="300.0" layoutY="132.0" mnemonicParsing="false" onAction="#deleteItem" text="Удалить" textFill="#fc0000">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="magLab" alignment="CENTER" layoutX="216.0" layoutY="112.0" prefHeight="18.0" prefWidth="168.0" textFill="RED" />
+                                          </children></AnchorPane>
+                                  </content>
+                              </Tab>
+                          </tabs>
+                      </TabPane>
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+    <Tab text="Технологии">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="obName" layoutX="37.0" layoutY="24.0" promptText="Наименование" />
+                  <ListView fx:id="obType" layoutX="37.0" layoutY="57.0" prefHeight="26.0" prefWidth="148.0" />
+                  <ListView fx:id="sortWood" layoutX="37.0" layoutY="93.0" prefHeight="26.0" prefWidth="148.0" />
+                  <TableView fx:id="table3" layoutX="411.0" layoutY="24.0" prefHeight="227.0" prefWidth="151.0">
+                    <columns>
+                      <TableColumn fx:id="matColumn3" prefWidth="75.0" text="Материал" />
+                      <TableColumn fx:id="Size3" prefWidth="75.0" text="Кол-во" />
+                    </columns>
+                  </TableView>
+                  <ListView fx:id="MaterialList" layoutX="226.0" layoutY="24.0" prefHeight="101.0" prefWidth="148.0" />
+                  <TextField fx:id="sizeField" layoutX="226.0" layoutY="138.0" promptText="Кол-во" />
+                  <Button layoutX="254.0" layoutY="306.0" mnemonicParsing="false" onAction="#addObject" text="Добавить" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="238.0" layoutY="179.0" mnemonicParsing="false" onAction="#addMaterial" text="Добавить материал" />
+                  <Button layoutX="242.0" layoutY="213.0" mnemonicParsing="false" onAction="#deleteMaterial" text="Удалить материал" textFill="RED" />
+                  <Label fx:id="lab" alignment="CENTER" layoutX="172.0" layoutY="164.0" prefHeight="18.0" prefWidth="238.0" textFill="RED" />
+
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Карточки">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <TableView fx:id="table4" layoutX="12.0" layoutY="7.0" prefHeight="306.0" prefWidth="575.0">
+                          <columns>
+                              <TableColumn fx:id="c1Column" prefWidth="203.0" text="Название" />
+                              <TableColumn fx:id="c2Column" minWidth="0.0" prefWidth="188.20001220703125" text="Изделие" />
+                              <TableColumn fx:id="c3Column" prefWidth="184.20001220703125" text="Сорт" />
+                          </columns>
+                      </TableView>
+                      <Button layoutX="216.0" layoutY="331.0" mnemonicParsing="false" onAction="#setCartValue" text="Открыть">
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                      </Button>
+                      <Button layoutX="300.0" layoutY="331.0" mnemonicParsing="false" onAction="#deleteCart" text="Удалить" textFill="RED">
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                      </Button>
+                  <Label fx:id="helpLab" alignment="CENTER" layoutX="154.0" layoutY="313.0" prefHeight="18.0" prefWidth="290.0" textFill="RED" />
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+  </tabs>
+</TabPane>
